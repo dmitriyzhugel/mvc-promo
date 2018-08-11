@@ -23,15 +23,15 @@ spl_autoload_register(function ($class_name) {
 
 class HttpKernel {
 
-    private $_defaultController = 'Default';
+    private $_defaultController = 'Shedule';
     private $_defaultAction = 'Index';
 
     public function handle(){
         $uri = $_SERVER['REQUEST_URI'];
         // Разбираем строку запроса
         if($uri == '/'){
-            $controllerName = $this->_defaultController;
-            $actionName = $this->_defaultAction;
+            $controllerName = $this->_defaultController . 'Controller';
+            $actionName = 'action' . $this->_defaultAction;
         }else{
             $uri = trim($uri,'/');
             $uri_buf = explode('/',$uri);

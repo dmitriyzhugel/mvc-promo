@@ -43,6 +43,7 @@
               <th scope="col">Дата выезда из Москвы</th>
               <th scope="col">ФИО курьера</th>
               <th scope="col">Дата прибытия в регион</th>
+              <th scope="col">Дата возврата</th>
             </tr>
           </thead>
         <?php foreach($routes as $route){ ?>
@@ -52,6 +53,7 @@
                 <td><?=date('d.m.Y',strtotime($route['start_date']));?></td>
                 <td><?=$route['surname'];?> <?=$route['firstname'];?> <?=$route['lastname'];?></td>
                 <td><?=date('d.m.Y',strtotime($route['arrival_date']));?></td>
+                <td><?=date('d.m.Y',strtotime($route['back_date']));?></td>
             </tr>
         <?php } ?>
         </table>

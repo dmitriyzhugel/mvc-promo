@@ -31,7 +31,7 @@ class Courier {
       */
      public static function check($courier_id,$date_from,$date_to){
          $sql = "SELECT * FROM `route` WHERE
-         (`start_date` < :date_to AND `arrival_date` > :date_from)
+         (`start_date` < :date_to AND `back_date` > :date_from)
          AND courier_id = :courier_id";
          $rows = MYDB::getByParams($sql,[
              ':date_from'=>$date_from,

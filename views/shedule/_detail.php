@@ -1,4 +1,3 @@
-<table class="table" id="shedule-table">
     <thead>
     <tr>
       <th scope="col">#</th>
@@ -6,6 +5,7 @@
       <th scope="col">Дата выезда из Москвы</th>
       <th scope="col">ФИО курьера</th>
       <th scope="col">Дата прибытия в регион</th>
+      <th scope="col">Дата возврата</th>
     </tr>
   </thead>
 <?php if(sizeof($routes)){ ?>
@@ -16,6 +16,7 @@
         <td><?=date('d.m.Y',strtotime($route['start_date']));?></td>
         <td><?=$route['surname'];?> <?=$route['firstname'];?> <?=$route['lastname'];?></td>
         <td><?=date('d.m.Y',strtotime($route['arrival_date']));?></td>
+        <td><?=date('d.m.Y',strtotime($route['back_date']));?></td>
     </tr>
 <?php } ?>
 <?php }else{ ?>
@@ -23,4 +24,3 @@
         <td colspan="5">Нет данных. Выберите другой период</td>
     </tr>
 <?php } ?>
-</table>
