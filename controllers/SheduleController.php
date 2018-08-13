@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Контроллер для управления расписанием
+ * @author ZHugel Dmitriy
+ */
+
 class SheduleController extends BaseController {
 
     /**

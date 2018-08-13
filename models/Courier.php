@@ -2,6 +2,7 @@
 
 /***
  * Модель курьера
+ * @author Zhugel Dmitriy
  */
 class Courier {
 

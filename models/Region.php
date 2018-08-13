@@ -2,6 +2,7 @@
 
 /***
  * Модель региона
+ * @author Zhugel Dmitriy
  */
 class Region {
 
@@ -13,9 +14,11 @@ class Region {
         $rows = MYDB::getAll($sql);
         $regions = [];
         foreach($rows as $row){
-            $regions[] = [
+            $regions[ $row['id'] ] = [
                 'id'=>$row['id'],
-                'name'=>$row['region_name']
+                'name'=>$row['region_name'],
+                'durability'=>$row['durability'],
+                'durability_back'=>$row['durability_back']
             ];
         }
         return $regions;
