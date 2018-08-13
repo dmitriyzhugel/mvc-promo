@@ -21,6 +21,7 @@ class InitCommand {
                 $arrival_date = Route::calcArrivalDate($region_id,$start_date);
                 $back_date = Route::calcBackDate($region_id,$start_date);
                 Route::add($region_id,$start_date,$i_courier);
+                // Получаем время поездки и смещаем дату
                 $durability = $regions[ $region_id ]['durability'] + $regions[ $region_id ]['durability_back'];
                 $courier_dates[ $i_courier ]->modify("+{$durability} day");
             } while ( $end_date > $courier_dates[ $i_courier ] );
